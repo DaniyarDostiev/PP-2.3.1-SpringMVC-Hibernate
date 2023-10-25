@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars Page</title>
+</head>
+<body>
+<h1>Машины</h1>
+<table border="1">
+    <tr>
+        <th>Номер</th>
+        <th>Производитель</th>
+        <th>Модель</th>
+    </tr>
+    <tr th:each="car, state : ${cars}"
+        class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+        <td th:utext="${car.id}">Номер</td>
+        <td th:utext="${car.brand}">Производитель</td>
+        <td th:utext="${car.model}">Модель</td>
+    </tr>
+</table>
+</body>
+</html>
